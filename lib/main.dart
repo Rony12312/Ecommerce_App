@@ -126,7 +126,6 @@ class _MyAppState extends State<MyApp> {
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: MaterialButton(
                           onPressed: () {
-
                             print("Login button pressed!");
                           },
                           color: Color(0xff6a63b7),
@@ -142,7 +141,6 @@ class _MyAppState extends State<MyApp> {
                             style: TextStyle(fontSize: 18),
                           ),
                           minWidth: double.infinity,
-
                           height: 55,
                         ),
                       ),
@@ -161,8 +159,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(100),
                         // Rounded top-left corner
-                        topRight:
-                            Radius.circular(100),
+                        topRight: Radius.circular(100),
                       ),
                     ),
                     child: Center(
