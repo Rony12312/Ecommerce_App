@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context)
                 .size
                 .height, // Ensures full screen height
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                   child: Container(
                     height: 200,
                     width: 200,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xff6a63b7),
                       shape: BoxShape.circle,
                     ),
@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                   child: Container(
                     height: 100,
                     width: 100,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xff6a63b7),
                       shape: BoxShape.circle,
                     ),
@@ -61,26 +61,26 @@ class _MyAppState extends State<MyApp> {
                     // Minimize column height to content size
                     children: [
                       // Welcome Text
-                      Text(
+                      const Text(
                         "Welcome Back",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 20), // Space between elements
+                      const SizedBox(height: 20), // Space between elements
                       // Image
                       Image.asset(
                         "images/image.jpg",
                         height: 200, // Adjust image height as needed
                       ),
-                      SizedBox(height: 30), // Space between elements
+                      const SizedBox(height: 30), // Space between elements
                       // Username TextField
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: TextFormField(
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
@@ -89,17 +89,17 @@ class _MyAppState extends State<MyApp> {
                             ),
                             hintText: "Username",
                             hintFadeDuration: Durations.long1,
-                            fillColor: Color(0xffe3e0f1),
+                            fillColor: const Color(0xffe3e0f1),
                             // Add this line
                             filled: true,
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.email_rounded,
                               color: Color(0xff6a63b7),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20), // Space between elements
+                      const SizedBox(height: 20), // Space between elements
                       // Password TextField
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -111,32 +111,32 @@ class _MyAppState extends State<MyApp> {
                             ),
                             hintText: "Password",
                             hintFadeDuration: Durations.long1,
-                            fillColor: Color(0xffe3e0f1),
+                            fillColor: const Color(0xffe3e0f1),
                             // Add this line
                             filled: true,
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.lock,
                               color: Color(0xff6a63b7),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: MaterialButton(
                           onPressed: () {
                             print("Login button pressed!");
                           },
-                          color: Color(0xff6a63b7),
+                          color: const Color(0xff6a63b7),
                           textColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0),
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             vertical: 15.0,
                           ),
-                          child: Text(
+                          child: const Text(
                             "Login",
                             style: TextStyle(fontSize: 18),
                           ),
@@ -154,7 +154,7 @@ class _MyAppState extends State<MyApp> {
                   right: 0,
                   child: Container(
                     height: 70,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xffe3e0f1), // Background color
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(100),
@@ -162,7 +162,7 @@ class _MyAppState extends State<MyApp> {
                         topRight: Radius.circular(100),
                       ),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Don't have an account? Sign up",
                         // Text inside the rectangle
