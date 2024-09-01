@@ -88,6 +88,7 @@ class _MyAppState extends State<MyApp> {
                               borderRadius: BorderRadius.circular(30),
                             ),
                             hintText: "Username",
+                            hintFadeDuration: Durations.long1,
                             fillColor: Color(0xffe3e0f1),
                             // Add this line
                             filled: true,
@@ -109,6 +110,7 @@ class _MyAppState extends State<MyApp> {
                               borderRadius: BorderRadius.circular(30),
                             ),
                             hintText: "Password",
+                            hintFadeDuration: Durations.long1,
                             fillColor: Color(0xffe3e0f1),
                             // Add this line
                             filled: true,
@@ -119,13 +121,12 @@ class _MyAppState extends State<MyApp> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20), // Space between elements
-                      // Material Button with the same width as TextFields
+                      SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: MaterialButton(
                           onPressed: () {
-                            // Add your button's onPressed functionality here
+
                             print("Login button pressed!");
                           },
                           color: Color(0xff6a63b7),
@@ -134,34 +135,34 @@ class _MyAppState extends State<MyApp> {
                             borderRadius: BorderRadius.circular(30.0),
                           ),
                           padding: EdgeInsets.symmetric(
-                            vertical: 15.0, // Adjust vertical padding as needed
+                            vertical: 15.0,
                           ),
                           child: Text(
                             "Login",
                             style: TextStyle(fontSize: 18),
                           ),
                           minWidth: double.infinity,
-                          // Make the button full width
-                          height: 55, // Adjust height to match TextField
+
+                          height: 55,
                         ),
                       ),
                     ],
                   ),
                 ),
-                // Rounded Rectangle at the Bottom
+
                 Positioned(
                   bottom: 0, // Position at the bottom of the screen
                   left: 0,
                   right: 0,
                   child: Container(
-                    height: 70, // Adjust height as needed
+                    height: 70,
                     decoration: BoxDecoration(
                       color: Color(0xffe3e0f1), // Background color
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(100),
                         // Rounded top-left corner
                         topRight:
-                            Radius.circular(100), // Rounded top-right corner
+                            Radius.circular(100),
                       ),
                     ),
                     child: Center(
