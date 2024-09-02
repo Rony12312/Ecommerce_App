@@ -17,6 +17,11 @@ class _MyAppState extends State<MyApp> {
   GlobalKey<FormState> formstate = GlobalKey();
   String? username;
   String? phone;
+  bool _isButtonPressed = false; // New state variable
+  TextEditingController _usernameController =
+      TextEditingController(); // New controller for username
+
+  String _displayUsername = ""; // New variable to display username
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +84,7 @@ class _MyAppState extends State<MyApp> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: TextFormField(
+                          controller: _usernameController, // Use the controller
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
@@ -88,9 +94,9 @@ class _MyAppState extends State<MyApp> {
                               borderRadius: BorderRadius.circular(30),
                             ),
                             hintText: "Username",
-                            hintFadeDuration: Durations.long1,
-                            fillColor: const Color(0xffe3e0f1),
-                            // Add this line
+                            fillColor: _isButtonPressed
+                                ? const Color(0xffd3d3d3) // New color
+                                : const Color(0xffe3e0f1),
                             filled: true,
                             prefixIcon: const Icon(
                               Icons.email_rounded,
@@ -110,9 +116,9 @@ class _MyAppState extends State<MyApp> {
                               borderRadius: BorderRadius.circular(30),
                             ),
                             hintText: "Password",
-                            hintFadeDuration: Durations.long1,
-                            fillColor: const Color(0xffe3e0f1),
-                            // Add this line
+                            fillColor: _isButtonPressed
+                                ? const Color(0xffd3d3d3) // New color
+                                : const Color(0xffe3e0f1),
                             filled: true,
                             prefixIcon: const Icon(
                               Icons.lock,
@@ -126,6 +132,11 @@ class _MyAppState extends State<MyApp> {
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: MaterialButton(
                           onPressed: () {
+                            setState(() {
+                              _isButtonPressed = true; // Update state
+                              _displayUsername =
+                                  _usernameController.text; // Get username text
+                            });
                             print("Login button pressed!");
                           },
                           color: const Color(0xff6a63b7),
@@ -144,10 +155,20 @@ class _MyAppState extends State<MyApp> {
                           height: 55,
                         ),
                       ),
+                      const SizedBox(height: 20), // Space after button
+                      // Display the entered username
+                      if (_displayUsername
+                          .isNotEmpty) // Check if username is not empty
+                        Text(
+                          "Username: $_displayUsername",
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
                     ],
                   ),
                 ),
-
                 Positioned(
                   bottom: 0, // Position at the bottom of the screen
                   left: 0,
